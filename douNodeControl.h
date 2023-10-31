@@ -11,7 +11,6 @@ public:
 	bool deleteLine(int lineNum);//删除某块链，后续行号-1
 	bool XdeleteLine(int lineNum); //删除某块链，后续行号不改变
 	bool showLine(int lineNum); //这个是安全的，不用考虑越界问题
-	bool showLineTo(int lineNum);
 	void run_statistics(void);
 	doubNode* nextLine();
 	doubNode* prevLine();  
@@ -26,6 +25,7 @@ public:
 	bool m_delete(int position); //删除某块链，后续行号不改变;聪明！！不小心写了两遍一样的功能！等重构
 	void clear();
 
+	
 	douNodeControl() {
 		head = new doubNode;
 		curLineNum = 0;

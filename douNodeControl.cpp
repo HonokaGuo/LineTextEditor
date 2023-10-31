@@ -1,6 +1,6 @@
 #include "douNodeControl.h"
 #include <iostream>
-#include<cstring>
+
 
 bool douNodeControl::insert(int position, const char* e, int size, int lineNum)
 {
@@ -89,7 +89,7 @@ bool douNodeControl::insertNewLine(int lineNum, const char* e , int size)
 bool douNodeControl::deleteLine(int lineNum)
 {
 	doubNode* p = nullptr;
-	int pos = lineNumtoPos(lineNum, p); //p指锟斤拷要删锟斤拷锟侥节碉拷
+	int pos = lineNumtoPos(lineNum, p); //p指向要删除的节点
 	if (pos == -1) {
 		return false;
 	}
@@ -131,24 +131,6 @@ bool douNodeControl::showLine(int lineNum)
 	}
 	std::cout << lineNum << ": " <<p->data << std::endl;
 	return true;
-}
-bool douNodeControl::showLineTo(int lineNum)
-{
-	if (!lineNum) {
-		std::cout << " line not exist" << std::endl;
-		return false;
-	}
-	doubNode* p = findLine(lineNum);
-	if (p == nullptr) {
-		std::cout << " line not exist" << std::endl;
-		return false;
-		}
-	p=head;
-	while(p->line!=lineNum&&p!=nullptr){
-		p=p->next;
-		showLine(p->line);
-	}
-    return false;
 }
 void douNodeControl::run_statistics(void)
 {
