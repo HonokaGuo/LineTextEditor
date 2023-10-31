@@ -6,7 +6,7 @@ int KMP (char* superString, char* pattern, int start) {
     
     int *sup = new int[supSize], *pat = new int[patSize];
     if (patSize < 2) {                                  
-        for (int i = 0; i < supSize; ++i) {
+        for (int i = start; i < supSize; ++i) {
             if (pattern[0] == superString[i]) {         //pattern is a single character
                 return i;
             }
